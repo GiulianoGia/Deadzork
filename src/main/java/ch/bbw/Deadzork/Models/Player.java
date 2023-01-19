@@ -1,14 +1,20 @@
 package ch.bbw.Deadzork.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     private String username;
     private List<Subject> inventory;
     private Integer life;
+    private Integer maxWeight;
+    private Integer currentWeight;
 
     public Player(String username) {
         this.username = username;
+        this.life = 100;
+        this.maxWeight = 30;
+        this.currentWeight = 0;
     }
 
     public String getUsername() {
@@ -35,15 +41,82 @@ public class Player {
         this.life = life;
     }
 
+    public Integer getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(Integer maxWeight) {
+        this.maxWeight = maxWeight;
+    }
+
+    /**
+     *
+     * @param subject The Item the user collects
+     * Adds a Subject to the User's Inventory
+     */
     private void addSubjectToInventory(Subject subject) {
-        this.inventory.add(subject);
+        this.currentWeight += subject.getWeight();
+        if (this.currentWeight <= this.maxWeight) {
+            this.inventory.add(subject);
+        } else {
+            this.currentWeight -= subject.getWeight();
+        }
     }
 
+    /**
+     *
+     * @param id The Id of the Subject
+     * Removes the Subject from the inventory
+     */
     private void removeSubjectFromInventoryWithId(Integer id) {
-        this.inventory.remove(id);
+        Subject subject = this.inventory.get(id);
+        if (subject != null) {
+            this.inventory.remove(id);
+            this.currentWeight -= subject.getWeight();
+        }
     }
 
+    /**
+     *
+     * @param subject The Subject
+     * Removes the Subject from the inventory
+     */
     private void removeSubjectFromInventoryWithSubject(Subject subject) {
-        this.inventory.remove(subject);
+        if (subject != null) {
+            this.inventory.remove(subject);
+            this.currentWeight -= subject.getWeight();
+        }
+    }
+
+    /**
+     * shows all the Subject an User has
+     */
+    private void showInventory() {
+        System.out.println("Your inventory:");
+        for (Subject subject : inventory) {
+            System.out.println(subject.getName() + ":" + subject.getWeight());
+        }
+    }
+
+    /**
+     *
+     * @param damage The damage the user gets
+     * @return The remaining life
+     */
+    private Integer lowerLife(Integer damage) {
+        if (life >= 1) {
+            this.life -= damage;
+        }
+        return this.life;
+    }
+
+    /**
+     *
+     * @param regeneration How much the user heals
+     * @return The remaining life
+     */
+    private Integer healLife(Integer regeneration) {
+        this.life += regeneration;
+        return this.life;
     }
 }
