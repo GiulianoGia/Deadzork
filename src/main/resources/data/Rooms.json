@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Office",
+    "disabled": "false",
+    "weaponList": [{
+      "name": "Pistol",
+      "weight": "5",
+      "level": "2",
+      "damage": "8"
+    }
+    ],
+    "zorkiesList": [{
+      "level": "1",
+      "live": "10",
+      "keyList": []
+    }
+    ]
+  },
+  {
+    "name": "Lounge",
+    "disabled": "false",
+    "weaponList": [{
+      "name": "Knife",
+      "weight": "3",
+      "level": "1",
+      "damage": "7"
+    }
+    ],
+    "zorkiesList": []
+  },
+  {
+    "name": "Storage",
+    "disabled": "false",
+    "weaponList": [{
+      "name": "Hammer",
+      "weight": "8",
+      "level": "1",
+      "damage": "5"
+    }],
+    "zorkiesList": []
+  },
+  {
+    "name": "Meeting Room",
+    "disabled": "false",
+    "weaponList": [{
+      "name": "Flamethrower",
+      "weight": "20",
+      "level": "5",
+      "damage": "50"
+    }
+    ],
+    "zorkiesList": []
+  }
+]

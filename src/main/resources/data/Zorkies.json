@@ -1,0 +1,17 @@
+[
+  {
+    "level": "1",
+    "live": "10",
+    "keyList": []
+  },
+  {
+    "level": "10",
+    "live": "200",
+    "keyList": [{
+      "name": "Key1",
+      "weight": "5",
+      "level": "10",
+      "status": "true"
+    }]
+  }
+]

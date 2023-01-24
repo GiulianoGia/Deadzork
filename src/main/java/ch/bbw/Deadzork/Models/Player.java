@@ -15,6 +15,7 @@ public class Player {
         this.life = 100;
         this.maxWeight = 30;
         this.currentWeight = 0;
+        this.inventory = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -54,7 +55,7 @@ public class Player {
      * @param subject The Item the user collects
      * Adds a Subject to the User's Inventory
      */
-    private void addSubjectToInventory(Subject subject) {
+    public void addSubjectToInventory(Subject subject) {
         this.currentWeight += subject.getWeight();
         if (this.currentWeight <= this.maxWeight) {
             this.inventory.add(subject);
@@ -68,7 +69,7 @@ public class Player {
      * @param id The Id of the Subject
      * Removes the Subject from the inventory
      */
-    private void removeSubjectFromInventoryWithId(Integer id) {
+    public void removeSubjectFromInventoryWithId(Integer id) {
         Subject subject = this.inventory.get(id);
         if (subject != null) {
             this.inventory.remove(id);
@@ -81,7 +82,7 @@ public class Player {
      * @param subject The Subject
      * Removes the Subject from the inventory
      */
-    private void removeSubjectFromInventoryWithSubject(Subject subject) {
+    public void removeSubjectFromInventoryWithSubject(Subject subject) {
         if (subject != null) {
             this.inventory.remove(subject);
             this.currentWeight -= subject.getWeight();
@@ -91,10 +92,14 @@ public class Player {
     /**
      * shows all the Subject an User has
      */
-    private void showInventory() {
+    public void showInventory() {
         System.out.println("Your inventory:");
-        for (Subject subject : inventory) {
-            System.out.println(subject.getName() + ":" + subject.getWeight());
+        if (inventory.size() > 0) {
+            for (Subject subject : inventory) {
+                System.out.println(subject.getName() + ":" + subject.getWeight());
+            }
+        } else {
+            System.out.println("Your inventory is empty");
         }
     }
 
@@ -103,7 +108,7 @@ public class Player {
      * @param damage The damage the user gets
      * @return The remaining life
      */
-    private Integer lowerLife(Integer damage) {
+    public Integer lowerLife(Integer damage) {
         if (life >= 1) {
             this.life -= damage;
         }
@@ -115,7 +120,7 @@ public class Player {
      * @param regeneration How much the user heals
      * @return The remaining life
      */
-    private Integer healLife(Integer regeneration) {
+    public Integer healLife(Integer regeneration) {
         this.life += regeneration;
         return this.life;
     }

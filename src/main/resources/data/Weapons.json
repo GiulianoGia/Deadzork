@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Knife",
+    "weight": "3",
+    "level": "1",
+    "damage": "7"
+  },
+  {
+    "name": "Flamethrower",
+    "weight": "20",
+    "level": "5",
+    "damage": "50"
+  },
+  {
+    "name": "Pistol",
+    "weight": "5",
+    "level": "2",
+    "damage": "8"
+  },
+  {
+    "name": "Hammer",
+    "weight": "8",
+    "level": "1",
+    "damage": "5"
+  }
+]
