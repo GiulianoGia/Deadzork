@@ -27,19 +27,29 @@ public class ActionHelper {
         }
     }
 
-    public String chooseRoom(List<Room> roomList) {
+    public Room findRoomByName(List<Room> roomList, String name) {
+        Room chosenRoom = new Room();
+        for (Room room : roomList) {
+            if (Objects.equals(room.getName(), name)) {
+                chosenRoom = room;
+            }
+        }
+        return chosenRoom;
+    }
+
+    public Room chooseRoom(List<Room> roomList) {
         listAllRooms(roomList);
 
         String chosenRoom = scanner.getUserInput("Which Room do you want to enter?");
         if (Objects.equals(chosenRoom, "1")) {
-            return "Office";
+            return findRoomByName(roomList, "Office");
         } else if (Objects.equals(chosenRoom, "2")) {
-            return "Lounge";
+            return findRoomByName(roomList, "Lounge");
         } else if (Objects.equals(chosenRoom, "3")) {
-            return "Storage";
+            return findRoomByName(roomList, "Storage");
         } else if (Objects.equals(chosenRoom, "4")) {
-            return "Meeting Room";
+            return findRoomByName(roomList, "Meeting Room");
         }
-        return "null";
+        return new Room();
     }
 }

@@ -39,4 +39,8 @@ public class Room {
     public void setZorkiesList(List<Zorkies> zorkiesList) {
         this.zorkiesList = zorkiesList;
     }
+
+    public void removeWeapon(Weapon weapon) {
+        this.weaponList.remove(weapon);
+    }
 }

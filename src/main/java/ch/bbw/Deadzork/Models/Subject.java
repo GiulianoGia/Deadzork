@@ -30,5 +30,12 @@ public class Subject {
 
     public void setLevel(Integer level) {this.level = level;}
 
-
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "name='" + name + '\'' +
+                ", weight=" + weight +
+                ", level=" + level +
+                '}';
+    }
 }

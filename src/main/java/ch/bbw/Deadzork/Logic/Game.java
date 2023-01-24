@@ -29,7 +29,7 @@ public class Game {
     public List<Room> roomList = new ArrayList<>();
 
     private String action = "";
-    private String currentRoomName = "";
+    private Room currentRoom = new Room();
 
     public Game() throws FileNotFoundException {}
 
@@ -65,11 +65,23 @@ public class Game {
             else if (Objects.equals(action, "4")) {
                 player.showInventory();
             }
+            else if (Objects.equals(action, "5")) {
+                if (this.currentRoom.getWeaponList().size() > 0) {
+                    player.addSubjectToInventory(this.currentRoom.getWeaponList().get(0));
+                    this.currentRoom.removeWeapon(this.currentRoom.getWeaponList().get(0));
+                    System.out.println("Weapon has been picked up");
+                } else {
+                    System.out.println("This Room hasn't got any Weapons!");
+                }
+            }
             else if (Objects.equals(action, "7")) {
-                String chosenRoom = actionHelper.chooseRoom(roomList);
-                if (!Objects.equals(chosenRoom, currentRoomName) && !chosenRoom.equals("null")) {
-                    this.currentRoomName = chosenRoom;
-                    System.out.println("You enter "+chosenRoom);
+                Room chosenRoom = actionHelper.chooseRoom(roomList);
+                if (!Objects.equals(chosenRoom, currentRoom) && chosenRoom != null) {
+                    this.currentRoom = chosenRoom;
+                    System.out.println("You enter "+chosenRoom.getName());
+                    if (chosenRoom.getWeaponList().size() > 0) {
+                        System.out.println("In this room are Weapons!");
+                    }
                 } else {
                     System.out.println("You cannot enter this room...");
                 }

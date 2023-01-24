@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Player {
     private String username;
-    private List<Subject> inventory;
+    private List<Weapon> inventory;
     private Integer life;
     private Integer maxWeight;
     private Integer currentWeight;
@@ -26,11 +26,11 @@ public class Player {
         this.username = username;
     }
 
-    public List<Subject> getInventory() {
+    public List<Weapon> getInventory() {
         return inventory;
     }
 
-    public void setInventory(List<Subject> inventory) {
+    public void setInventory(List<Weapon> inventory) {
         this.inventory = inventory;
     }
 
@@ -55,7 +55,7 @@ public class Player {
      * @param subject The Item the user collects
      * Adds a Subject to the User's Inventory
      */
-    public void addSubjectToInventory(Subject subject) {
+    public void addSubjectToInventory(Weapon subject) {
         this.currentWeight += subject.getWeight();
         if (this.currentWeight <= this.maxWeight) {
             this.inventory.add(subject);
@@ -96,7 +96,7 @@ public class Player {
         System.out.println("Your inventory:");
         if (inventory.size() > 0) {
             for (Subject subject : inventory) {
-                System.out.println(subject.getName() + ":" + subject.getWeight());
+                System.out.println(subject.toString());
             }
         } else {
             System.out.println("Your inventory is empty");
