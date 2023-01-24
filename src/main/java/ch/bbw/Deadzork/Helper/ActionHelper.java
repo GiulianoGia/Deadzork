@@ -2,6 +2,7 @@ package ch.bbw.Deadzork.Helper;
 
 import ch.bbw.Deadzork.Models.Actions;
 import ch.bbw.Deadzork.Models.Room;
+import ch.bbw.Deadzork.Models.Subject;
 
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +13,7 @@ public class ActionHelper {
 
     public void listAllActions() {
         System.out.println("Please Choose an Action:");
-        Integer round = 0;
+        int round = 0;
         for (Actions action : Actions.values()) {
             round++;
             System.out.println(round + ": " + action);
@@ -20,7 +21,7 @@ public class ActionHelper {
     }
 
     public void listAllRooms(List<Room> roomList) {
-        Integer round = 0;
+        int round = 0;
         for (Room room : roomList) {
             round++;
             System.out.println(round + ": " + room.getName());
@@ -51,5 +52,15 @@ public class ActionHelper {
             return findRoomByName(roomList, "Meeting Room");
         }
         return new Room();
+    }
+
+    public Subject chooseSubjectToRemove(List<Subject> subjectList) {
+        int round = 0;
+        for (Subject subject : subjectList) {
+            round++;
+            System.out.println(round + ": " + subject.getName());
+        }
+        String chosenSubject = scanner.getUserInput("Which item do you want to remove?");
+        return subjectList.get(Integer.parseInt(chosenSubject) - 1);
     }
 }

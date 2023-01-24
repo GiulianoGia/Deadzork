@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Player {
     private String username;
-    private List<Weapon> inventory;
+    private List<Subject> inventory;
     private Integer life;
     private Integer maxWeight;
     private Integer currentWeight;
@@ -26,11 +26,11 @@ public class Player {
         this.username = username;
     }
 
-    public List<Weapon> getInventory() {
+    public List<Subject> getInventory() {
         return inventory;
     }
 
-    public void setInventory(List<Weapon> inventory) {
+    public void setInventory(List<Subject> inventory) {
         this.inventory = inventory;
     }
 

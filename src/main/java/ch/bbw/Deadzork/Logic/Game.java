@@ -5,10 +5,7 @@ import ch.bbw.Deadzork.Helper.ScannerHelper;
 import ch.bbw.Deadzork.Mappers.RoomMapper;
 import ch.bbw.Deadzork.Mappers.WeaponMapper;
 import ch.bbw.Deadzork.Mappers.ZorkiesMapper;
-import ch.bbw.Deadzork.Models.Player;
-import ch.bbw.Deadzork.Models.Room;
-import ch.bbw.Deadzork.Models.Weapon;
-import ch.bbw.Deadzork.Models.Zorkies;
+import ch.bbw.Deadzork.Models.*;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -73,6 +70,10 @@ public class Game {
                 } else {
                     System.out.println("This Room hasn't got any Weapons!");
                 }
+            }
+            else if (Objects.equals(action, "6")) {
+                Subject chosenSubject = actionHelper.chooseSubjectToRemove(player.getInventory());
+                player.removeSubjectFromInventoryWithSubject(chosenSubject);
             }
             else if (Objects.equals(action, "7")) {
                 Room chosenRoom = actionHelper.chooseRoom(roomList);
