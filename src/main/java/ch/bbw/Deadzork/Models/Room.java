@@ -44,5 +44,7 @@ public class Room {
         this.weaponList.remove(weapon);
     }
 
+    public void removeZorkie(Zorkies zorkies) { this.zorkiesList.remove(zorkies);}
+
     public void addSubject(Subject weapon) { this.weaponList.add(weapon); }
 }

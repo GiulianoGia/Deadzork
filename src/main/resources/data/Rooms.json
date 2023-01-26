@@ -12,6 +12,7 @@
     "zorkiesList": [{
       "level": "1",
       "life": "10",
+      "attack": "10",
       "keyList": []
     }
     ]

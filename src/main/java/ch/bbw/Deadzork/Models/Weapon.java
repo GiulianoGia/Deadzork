@@ -23,8 +23,9 @@ public class Weapon extends Subject{
     @Override
     public String toString() {
         return "Weapon{" +
-                "name" + getName() +
-                "damage=" + damage +
+                "name=" + getName() +
+                ", damage=" + damage +
+                ", weight=" + getWeight() +
                 '}';
     }
 }

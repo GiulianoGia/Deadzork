@@ -64,17 +64,18 @@ public class ActionHelper {
 
     public Boolean zorkieAttackPlayer(Player player, Zorkies zorkies, List<Weapon> weaponList) {
         System.out.println("A Zorkie Level " + zorkies.getLevel() + " attacks you!");
-        player.showInventory();
-        String chosenWeapon = scanner.getUserInput("Which Weapon do you want to use?");
-        Weapon playerWeapon = new Weapon();
-        for (Weapon weapon : weaponList) {
-            if (Objects.equals(chosenWeapon, weapon.getName())) {
-                playerWeapon = weapon;
-            }
+        int round = 0;
+        for (Subject subject : player.getInventory()) {
+            round++;
+            System.out.println(round + ": " + subject.toString());
         }
+        String chosenWeapon = scanner.getUserInput("Which Weapon do you want to use?");
+        Weapon playerWeapon = weaponList.get(Integer.parseInt(chosenWeapon) - 1);
         while (player.getLife() > 0 && zorkies.getLife() > 0) {
             player.lowerLife(zorkies.getAttack());
+            System.out.println("Life remaining: "+player.getLife());
             zorkies.lowerLife(playerWeapon.getDamage());
+            System.out.println("Zorkie life remaining: "+zorkies.getLife());
         }
         if (zorkies.getLife() <= 0) {
             System.out.println("You killed a Zorkie");

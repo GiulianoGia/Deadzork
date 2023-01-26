@@ -62,7 +62,7 @@ public class Game {
             else if (Objects.equals(action, "4")) {
                 player.showInventory();
             }
-            else if (Objects.equals(action, "5")) {
+            else if (Objects.equals(action, "5") && !Objects.equals(currentRoom.getName(), null)) {
                 if (this.currentRoom.getWeaponList().size() > 0) {
                     player.addSubjectToInventory(this.currentRoom.getWeaponList().get(0));
                     this.currentRoom.removeWeapon(this.currentRoom.getWeaponList().get(0));
@@ -86,6 +86,7 @@ public class Game {
                     }
                     if (this.currentRoom.getZorkiesList().size() > 0) {
                         Boolean hasWon = actionHelper.zorkieAttackPlayer(player, this.currentRoom.getZorkiesList().get(0), weaponList);
+                        currentRoom.removeZorkie(this.currentRoom.getZorkiesList().get(0));
                         if (!hasWon) action = "1";
                     }
                 } else {
