@@ -1,8 +1,6 @@
 package ch.bbw.Deadzork.Helper;
 
-import ch.bbw.Deadzork.Models.Actions;
-import ch.bbw.Deadzork.Models.Room;
-import ch.bbw.Deadzork.Models.Subject;
+import ch.bbw.Deadzork.Models.*;
 
 import java.util.List;
 import java.util.Objects;
@@ -62,5 +60,30 @@ public class ActionHelper {
         }
         String chosenSubject = scanner.getUserInput("Which item do you want to remove?");
         return subjectList.get(Integer.parseInt(chosenSubject) - 1);
+    }
+
+    public Boolean zorkieAttackPlayer(Player player, Zorkies zorkies, List<Weapon> weaponList) {
+        System.out.println("A Zorkie Level " + zorkies.getLevel() + " attacks you!");
+        player.showInventory();
+        String chosenWeapon = scanner.getUserInput("Which Weapon do you want to use?");
+        Weapon playerWeapon = new Weapon();
+        for (Weapon weapon : weaponList) {
+            if (Objects.equals(chosenWeapon, weapon.getName())) {
+                playerWeapon = weapon;
+            }
+        }
+        while (player.getLife() > 0 && zorkies.getLife() > 0) {
+            player.lowerLife(zorkies.getAttack());
+            zorkies.lowerLife(playerWeapon.getDamage());
+        }
+        if (zorkies.getLife() <= 0) {
+            System.out.println("You killed a Zorkie");
+            return true;
+        } else if (player.getLife() <= 0) {
+            System.out.println("You have been defeted!");
+            return false;
+        } else {
+            return false;
+        }
     }
 }

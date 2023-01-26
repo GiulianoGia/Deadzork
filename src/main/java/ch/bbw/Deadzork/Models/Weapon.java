@@ -8,11 +8,23 @@ public class Weapon extends Subject{
         this.damage = damage;
     }
 
+    public Weapon() {
+        super();
+    }
+
     public Integer getDamage() {
         return damage;
     }
 
     public void setDamage(Integer damage) {
         this.damage = damage;
+    }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "name" + getName() +
+                "damage=" + damage +
+                '}';
     }
 }

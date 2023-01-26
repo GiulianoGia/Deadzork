@@ -16,6 +16,7 @@ public class Player {
         this.maxWeight = 30;
         this.currentWeight = 0;
         this.inventory = new ArrayList<>();
+        this.inventory.add(new Weapon("Fist", 0, 2, 5));
     }
 
     public String getUsername() {
@@ -55,7 +56,7 @@ public class Player {
      * @param subject The Item the user collects
      * Adds a Subject to the User's Inventory
      */
-    public void addSubjectToInventory(Weapon subject) {
+    public void addSubjectToInventory(Subject subject) {
         this.currentWeight += subject.getWeight();
         if (this.currentWeight <= this.maxWeight) {
             this.inventory.add(subject);

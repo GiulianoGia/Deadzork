@@ -6,12 +6,12 @@
       "name": "Pistol",
       "weight": "5",
       "level": "2",
-      "damage": "8"
+      "attack": "8"
     }
     ],
     "zorkiesList": [{
       "level": "1",
-      "live": "10",
+      "life": "10",
       "keyList": []
     }
     ]
@@ -23,7 +23,7 @@
       "name": "Knife",
       "weight": "3",
       "level": "1",
-      "damage": "7"
+      "attack": "7"
     }
     ],
     "zorkiesList": []
@@ -35,7 +35,7 @@
       "name": "Hammer",
       "weight": "8",
       "level": "1",
-      "damage": "5"
+      "attack": "5"
     }],
     "zorkiesList": []
   },
@@ -46,7 +46,7 @@
       "name": "Flamethrower",
       "weight": "20",
       "level": "5",
-      "damage": "50"
+      "attack": "50"
     }
     ],
     "zorkiesList": []

@@ -10,6 +10,10 @@ public class Subject {
         this.weight = weight;
     }
 
+    public Subject() {
+
+    }
+
     public String getName() {
         return name;
     }

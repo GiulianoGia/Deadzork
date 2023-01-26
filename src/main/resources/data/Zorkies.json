@@ -1,16 +1,45 @@
 [
   {
     "level": "1",
-    "live": "10",
+    "life": "10",
+    "attack": 10,
+    "keyList": [{
+      "name": "Key2",
+      "weight": "5",
+      "level": "1",
+      "status": "true"
+    }]
+  },
+  {
+    "level": "2",
+    "life": "20",
+    "attack": 10,
     "keyList": []
   },
   {
-    "level": "10",
-    "live": "200",
+    "level": "3",
+    "life": "50",
+    "attack": 10,
+    "keyList": [{
+      "name": "Key3",
+      "weight": "5",
+      "level": "3",
+      "status": "true"
+    }]
+  },
+  {
+    "level": "4",
+    "life": "100",
+    "attack": 10,
+    "keyList": []
+  },
+  {
+    "level": "5",
+    "life": "200",
     "keyList": [{
       "name": "Key1",
       "weight": "5",
-      "level": "10",
+      "level": "1",
       "status": "true"
     }]
   }

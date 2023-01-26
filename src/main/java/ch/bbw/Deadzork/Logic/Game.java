@@ -74,6 +74,7 @@ public class Game {
             else if (Objects.equals(action, "6")) {
                 Subject chosenSubject = actionHelper.chooseSubjectToRemove(player.getInventory());
                 player.removeSubjectFromInventoryWithSubject(chosenSubject);
+                this.currentRoom.addSubject(chosenSubject);
             }
             else if (Objects.equals(action, "7")) {
                 Room chosenRoom = actionHelper.chooseRoom(roomList);
@@ -82,6 +83,10 @@ public class Game {
                     System.out.println("You enter "+chosenRoom.getName());
                     if (chosenRoom.getWeaponList().size() > 0) {
                         System.out.println("In this room are Weapons!");
+                    }
+                    if (this.currentRoom.getZorkiesList().size() > 0) {
+                        Boolean hasWon = actionHelper.zorkieAttackPlayer(player, this.currentRoom.getZorkiesList().get(0), weaponList);
+                        if (!hasWon) action = "1";
                     }
                 } else {
                     System.out.println("You cannot enter this room...");

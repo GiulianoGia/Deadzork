@@ -5,7 +5,7 @@ import java.util.List;
 public class Room {
     private String name;
     private Boolean disabled;
-    private List<Weapon> weaponList;
+    private List<Subject> weaponList;
     private List<Zorkies> zorkiesList;
 
     public String getName() {
@@ -24,11 +24,11 @@ public class Room {
         this.disabled = disabled;
     }
 
-    public List<Weapon> getWeaponList() {
+    public List<Subject> getWeaponList() {
         return weaponList;
     }
 
-    public void setWeaponList(List<Weapon> weaponList) {
+    public void setWeaponList(List<Subject> weaponList) {
         this.weaponList = weaponList;
     }
 
@@ -40,7 +40,9 @@ public class Room {
         this.zorkiesList = zorkiesList;
     }
 
-    public void removeWeapon(Weapon weapon) {
+    public void removeWeapon(Subject weapon) {
         this.weaponList.remove(weapon);
     }
+
+    public void addSubject(Subject weapon) { this.weaponList.add(weapon); }
 }
