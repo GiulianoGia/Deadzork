@@ -36,6 +36,7 @@
   {
     "level": "5",
     "life": "200",
+    "damage": 20;
     "keyList": [{
       "name": "Key1",
       "weight": "5",

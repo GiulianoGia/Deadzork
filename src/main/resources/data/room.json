@@ -1,0 +1,14 @@
+[{
+  "name": "crashsite",
+  "itemsInRoom": [{"name": "hammer", "weight": 2, "level":  1}, {"name": "pickaxe", "weight": 5, "level":  2}],
+  "accessibleRooms": ["storage", "office"],
+  "isClosed": false
+},
+  {
+    "name": "crashsite",
+    "itemsInRoom": [{"name": "hammer", "weight": 2, "level":  1}, {"name": "pickaxe", "weight": 5, "level":  2}],
+    "accessibleRooms": ["storage", "office"],
+    "isClosed": false
+}
+
+]

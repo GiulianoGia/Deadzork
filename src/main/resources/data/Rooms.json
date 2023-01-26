@@ -23,7 +23,7 @@
       "name": "Knife",
       "weight": "3",
       "level": "1",
-      "attack": "7"
+      "attack": "23"
     }
     ],
     "zorkiesList": []
@@ -35,7 +35,7 @@
       "name": "Hammer",
       "weight": "8",
       "level": "1",
-      "attack": "5"
+      "attack": "12"
     }],
     "zorkiesList": []
   },

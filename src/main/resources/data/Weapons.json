@@ -3,7 +3,7 @@
     "name": "Knife",
     "weight": "3",
     "level": "1",
-    "damage": "7"
+    "damage": "23"
   },
   {
     "name": "Flamethrower",
@@ -21,6 +21,6 @@
     "name": "Hammer",
     "weight": "8",
     "level": "1",
-    "damage": "5"
+    "damage": "12"
   }
 ]

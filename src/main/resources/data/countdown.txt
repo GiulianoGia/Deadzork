@@ -1,0 +1,14 @@
+
+
+
+long start = System.currentTimeMillis();
+long end = start + 3 * 1000;
+while (zorkie.health > 0);
+if (scanner.equals(null) && System.currentTimeMillis() < end) {
+    zorkie.attacks();
+    sout("You were too slow. The Zorkie attacked you.")
+} else {
+    user.attacks();
+}
+
+
