@@ -22,7 +22,7 @@ public class ActionHelper {
         int round = 0;
         for (Room room : roomList) {
             round++;
-            System.out.println(round + ": " + room.getName());
+            System.out.println(round + ": " + room.getName() + " " +room.getWeaponList());
         }
     }
 

@@ -1,5 +1,6 @@
 package ch.bbw.Deadzork.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
@@ -7,6 +8,11 @@ public class Room {
     private Boolean disabled;
     private List<Subject> weaponList;
     private List<Zorkies> zorkiesList;
+
+    public Room() {
+        this.weaponList = new ArrayList<>();
+        this.zorkiesList = new ArrayList<>();
+    }
 
     public String getName() {
         return name;

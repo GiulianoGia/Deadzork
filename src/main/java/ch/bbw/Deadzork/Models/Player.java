@@ -12,7 +12,7 @@ public class Player {
 
     public Player(String username) {
         this.username = username;
-        this.life = 100;
+        this.life = 150;
         this.maxWeight = 30;
         this.currentWeight = 0;
         this.inventory = new ArrayList<>();

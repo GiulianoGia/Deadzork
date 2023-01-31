@@ -14,8 +14,7 @@
       "life": "10",
       "attack": "10",
       "keyList": []
-    }
-    ]
+    }]
   },
   {
     "name": "Lounge",
@@ -27,7 +26,19 @@
       "attack": "7"
     }
     ],
-    "zorkiesList": []
+    "zorkiesList": [{
+      "level": "2",
+      "life": "20",
+      "attack": "10",
+      "keyList": [
+        {
+          "name": "Key2",
+          "weight": "3",
+          "level": "1",
+          "status": "true"
+        }
+      ]
+    }]
   },
   {
     "name": "Storage",
@@ -36,20 +47,45 @@
       "name": "Hammer",
       "weight": "8",
       "level": "1",
-      "attack": "5"
+      "attack": "15"
     }],
-    "zorkiesList": []
+    "zorkiesList": [{
+      "level": "3",
+      "life": "40",
+      "attack": "10",
+      "keyList": [{
+        "name": "Key3",
+        "weight": "5",
+        "level": "3",
+        "status": "true"
+      }]
+    }]
   },
   {
     "name": "Meeting Room",
     "disabled": "false",
-    "weaponList": [{
-      "name": "Flamethrower",
-      "weight": "20",
-      "level": "5",
-      "attack": "50"
-    }
+    "weaponList": [
+      {
+        "name": "Flamethrower",
+        "weight": "20",
+        "level": "5",
+        "attack": "50"
+      }
     ],
-    "zorkiesList": []
+    "zorkiesList": [
+      {
+        "level": "5",
+        "life": "75",
+        "attack": "8",
+        "keyList": [
+          {
+            "name": "Key1",
+            "weight": "5",
+            "level": "1",
+            "status": "true"
+          }
+        ]
+      }
+    ]
   }
 ]

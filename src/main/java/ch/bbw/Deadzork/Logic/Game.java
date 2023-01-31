@@ -40,6 +40,16 @@ public class Game {
         System.out.println("Welcome to Deadzork!");
     }
 
+    private Boolean checkIfPlayerHasAllKeys(Player player) {
+        var count = 0;
+        for (Subject subject : player.getInventory()) {
+            if (subject.getName().equals("Key")) {
+                count++;
+            }
+        }
+        return Objects.equals(count, 3);
+    }
+
     public void startGame() throws FileNotFoundException {
         Player player = createNewPlayer();
 
@@ -52,6 +62,11 @@ public class Game {
         actionHelper.listAllActions();
 
         while (!Objects.equals(action, "1")) {
+            Boolean hasPlayerWon = checkIfPlayerHasAllKeys(player);
+            if (hasPlayerWon) {
+                System.out.println("You have won the Game!");
+                action = "1";
+            }
             action = scanner.getUserInput("What do you want to do?");
             if (Objects.equals(action, "2")) {
                 actionHelper.listAllRooms(roomList);
@@ -86,6 +101,9 @@ public class Game {
                     }
                     if (this.currentRoom.getZorkiesList().size() > 0) {
                         Boolean hasWon = actionHelper.zorkieAttackPlayer(player, this.currentRoom.getZorkiesList().get(0), weaponList);
+                        if (currentRoom.getZorkiesList().get(0).getKeyList().size() > 0) {
+                            currentRoom.addSubject(currentRoom.getZorkiesList().get(0).getKeyList().get(0));
+                        }
                         currentRoom.removeZorkie(this.currentRoom.getZorkiesList().get(0));
                         if (!hasWon) action = "1";
                     }
