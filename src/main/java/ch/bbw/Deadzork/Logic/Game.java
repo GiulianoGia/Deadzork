@@ -43,11 +43,11 @@ public class Game {
     private Boolean checkIfPlayerHasAllKeys(Player player) {
         var count = 0;
         for (Subject subject : player.getInventory()) {
-            if (subject.getName().equals("Key")) {
+            if (subject.getName().equals("Key1") || subject.getName().equals("Key2") || subject.getName().equals("Key3")) {
                 count++;
             }
         }
-        return Objects.equals(count, 3);
+        return count == 3;
     }
 
     public void startGame() throws FileNotFoundException {
