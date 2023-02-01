@@ -68,8 +68,9 @@ public class Game {
         while (!Objects.equals(action, "1")) {
             Boolean hasPlayerWon = checkIfPlayerHasAllKeys(player);
             if (hasPlayerWon) {
-                System.out.println("You have won the Game!");
-                action = "1";
+                System.out.println("You have won the Game");
+                System.out.println("You are the ultimate Zorkie Champion!");
+                break;
             }
             action = scanner.getUserInput("What do you want to do?");
             if (Objects.equals(action, "2")) {
