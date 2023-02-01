@@ -7,5 +7,6 @@ public enum Actions {
     SHOWINVENTORY(),
     PICKUPITEM(),
     REMOVEITEM(),
-    ENTERROOM()
+    ENTERROOM(),
+    BACK()
 }

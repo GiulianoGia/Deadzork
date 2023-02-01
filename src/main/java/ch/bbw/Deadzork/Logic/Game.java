@@ -6,6 +6,7 @@ import ch.bbw.Deadzork.Mappers.RoomMapper;
 import ch.bbw.Deadzork.Mappers.WeaponMapper;
 import ch.bbw.Deadzork.Mappers.ZorkiesMapper;
 import ch.bbw.Deadzork.Models.*;
+import org.springframework.validation.ObjectError;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -57,6 +58,9 @@ public class Game {
         zorkiesList = zorkiesMapper.generateZorkies();
         roomList = roomMapper.generateWeapons();
 
+        ArrayList<Room> roomLogs = new ArrayList<>();
+        var round = 0;
+
         announceTheGame();
 
         actionHelper.listAllActions();
@@ -95,6 +99,8 @@ public class Game {
                 Room chosenRoom = actionHelper.chooseRoom(roomList);
                 if (!Objects.equals(chosenRoom, currentRoom) && chosenRoom != null) {
                     this.currentRoom = chosenRoom;
+                    roomLogs.add(this.currentRoom);
+                    round++;
                     System.out.println("You enter "+chosenRoom.getName());
                     if (chosenRoom.getWeaponList().size() > 0) {
                         System.out.println("In this room are Weapons!");
@@ -109,6 +115,14 @@ public class Game {
                     }
                 } else {
                     System.out.println("You cannot enter this room...");
+                }
+            } else if (Objects.equals(action, "8")) {
+                if (roomLogs.size() > 1) {
+                    this.currentRoom = roomLogs.get(round - 2);
+                    System.out.println("You go back to "+this.currentRoom.getName());
+                    roomLogs.remove(this.currentRoom);
+                } else {
+                    System.out.println("You haven't been in any room!");
                 }
             }
         }
